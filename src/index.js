@@ -1,13 +1,23 @@
 import React from 'react';
+import { BrowserRouter,Routes, Route,Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Loginpage from './modules/auth/Loginpage';
+import Registorpage from './modules/auth/Registorpage';
 import reportWebVitals from './reportWebVitals';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+  <BrowserRouter>
+  <Routes>
+    <Route path='' element={<Loginpage/>}></Route>
+    <Route path='/Registorpage' element={<Registorpage/>}></Route>
+  </Routes>
+  </BrowserRouter>
   </React.StrictMode>
 );
 
